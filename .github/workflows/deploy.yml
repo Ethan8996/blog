@@ -14,31 +14,85 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 打印环境信息
+      - name: Print Environment Info
+        run: |
+          echo "Node version: $(node -v)"
+          echo "NPM version: $(npm -v)"
+          echo "Current directory: $(pwd)"
+          echo "Directory contents: $(ls -la)"
+          echo "GitHub ref: ${{ github.ref }}"
+          echo "GitHub event: ${{ github.event_name }}"
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '14'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      # 检查 package.json
+      - name: Check package.json
+        run: |
+          echo "Package.json content:"
+          cat package.json
+          echo "\n-------------------\n"
 
+      # 安装依赖时添加详细日志
+      - name: Install dependencies
+        run: |
+          echo "Starting npm install..."
+          npm install --verbose
+          echo "Dependencies installed, checking node_modules:"
+          ls -la node_modules
+          echo "Checking vue-switches installation:"
+          npm ls vue-switches
+
+      # 构建时添加详细日志
       - name: Build VuePress site
-        run: npm run build
+        run: |
+          echo "Starting build process..."
+          npm run build
+          echo "Build completed, checking dist directory:"
+          ls -la blog/.vuepress/dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages         # 可以指定推送的目标分支
-          publish_dir: blog/.vuepress/dist    # 改为你的构建输出目录
+          publish_branch: gh-pages
+          publish_dir: blog/.vuepress/dist
           commit_message: 'deploy: update site'
 
+      # 部署状态检查
       - name: Deploy status
         if: always()
         run: |
+          echo "Job status: ${{ job.status }}"
           if [ ${{ job.status }} = success ]; then
-            echo "部署成功！"
+            echo "✅ 部署成功！"
+            echo "部署时间: $(date)"
+            echo "提交信息: ${{ github.event.head_commit.message }}"
           else
-            echo "部署失败，请检查配置和构建过程。"
+            echo "❌ 部署失败"
+            echo "错误发生时间: $(date)"
+            echo "最后一步: ${{ github.job }}"
+            exit 1
           fi
+
+      # 添加文件大小检查
+      - name: Check dist size
+        if: success()
+        run: |
+          echo "Checking dist directory size:"
+          du -sh blog/.vuepress/dist/*
+          echo "Total size:"
+          du -sh blog/.vuepress/dist
+
+      # 添加内存使用情况
+      - name: System Status
+        if: always()
+        run: |
+          echo "Memory usage:"
+          free -h
+          echo "Disk usage:"
+          df -h
