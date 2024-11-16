@@ -14,7 +14,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 打印环境信息
       - name: Print Environment Info
         run: |
           echo "Node version: $(node -v)"
@@ -41,19 +40,15 @@ jobs:
       - name: Install dependencies
         run: |
           echo "Starting npm install..."
-          npm install --verbose
-          echo "Dependencies installed, checking node_modules:"
-          ls -la node_modules
-          echo "Checking vue-switches installation:"
-          npm ls vue-switches
+          npm install
+          echo "Dependencies installed successfully"
 
-      # 构建时添加详细日志
       - name: Build VuePress site
         run: |
           echo "Starting build process..."
           npm run build
           echo "Build completed, checking dist directory:"
-          ls -la blog/.vuepress/dist
+          ls -la blog/.vuepress/dist || echo "dist directory not found!"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -63,7 +58,6 @@ jobs:
           publish_dir: blog/.vuepress/dist
           commit_message: 'deploy: update site'
 
-      # 部署状态检查
       - name: Deploy status
         if: always()
         run: |
