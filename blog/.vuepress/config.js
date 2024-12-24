@@ -1,7 +1,7 @@
 const path = require("path");
 module.exports = (options, context, api) => {
   return {
-    title: "Billy Chin",
+    title: "Ethan Xiong",
     description: "Web development, Frontend, JavaScript",
     base: '/blog/',  // 替换为你的仓库名
     theme: "@vuepress/blog",
