@@ -8,15 +8,19 @@
     "email": "newsbielt703@gmail.com"
   },
   "scripts": {
-    "dev": "vuepress dev blog --open --no-clear-screen",
-    "build": "vuepress build blog",
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress dev blog --open --no-clear-screen",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress build blog",
     "dev-bak": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress dev blog --open --no-clear-screen",
     "build-bak": "set NODE_OPTIONS=--openssl-legacy-provider && vuepress build blog"
   },
   "license": "MIT",
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
     "@vuepress/plugin-google-analytics": "^1.7.1",
     "@vuepress/theme-blog": "^2.3.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
     "vuepress": "^1.7.1"
   },
   "dependencies": {

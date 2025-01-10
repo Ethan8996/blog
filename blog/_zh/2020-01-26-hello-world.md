@@ -8,6 +8,6 @@ tags:
 summary: Ethan描述
 ---
 
-繁體中文 | [English](/en/2020/01/26/hello-world/)
+[繁體中文](/zh/2020/01/26/hello-world) | [English](/en/2020/01/26/hello-world)
 
 ## 欢迎使用

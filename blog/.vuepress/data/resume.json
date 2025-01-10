@@ -1,0 +1,148 @@
+{
+  "en": {
+    "basics": {
+      "name": "Ethan Xiong",
+      "title": "Full Stack Developer",
+      "email": "why15874692787@163.com",
+      "github": {
+        "url": "https://github.com/Ethan8996",
+        "text": "GitHub"
+      }
+    },
+    "about": {
+      "title": "About Me",
+      "content": "A passionate full-stack developer with expertise in modern web technologies and a keen interest in building scalable applications. Experienced in both frontend and backend development, with a focus on creating efficient and user-friendly solutions."
+    },
+    "skills": {
+      "title": "Technical Skills",
+      "categories": [
+        {
+          "name": "Frontend Development",
+          "items": [
+            "Vue.js / VuePress",
+            "React.js",
+            "JavaScript / TypeScript",
+            "HTML5 / CSS3 / Tailwind CSS"
+          ]
+        },
+        {
+          "name": "Backend Development",
+          "items": [
+            "Node.js",
+            "Python",
+            "RESTful APIs",
+            "Database Design"
+          ]
+        }
+      ]
+    },
+    "experience": {
+      "title": "Work Experience",
+      "items": [
+        {
+          "title": "Senior Developer",
+          "company": "Company Name",
+          "period": "2020 - Present",
+          "achievements": [
+            "Led development of key features for enterprise applications",
+            "Mentored junior developers and conducted code reviews",
+            "Implemented CI/CD pipelines and improved deployment processes"
+          ]
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "degree": "Bachelor's in Computer Science",
+          "school": "University Name",
+          "period": "2016 - 2020"
+        }
+      ]
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "items": [
+        {
+          "name": "Personal Blog",
+          "description": "A bilingual blog built with VuePress, featuring both Chinese and English content.",
+          "technologies": "VuePress, Vue.js, Tailwind CSS"
+        }
+      ]
+    }
+  },
+  "zh": {
+    "basics": {
+      "name": "熊文浩",
+      "title": "全栈开发工程师",
+      "email": "why15874692787@163.com",
+      "github": {
+        "url": "https://github.com/Ethan8996",
+        "text": "GitHub"
+      }
+    },
+    "about": {
+      "title": "关于我",
+      "content": "一位热衷于现代网络技术的全栈开发者，专注于构建可扩展的应用程序。在前端和后端开发方面都有丰富的经验，致力于创建高效且用户友好的解决方案。"
+    },
+    "skills": {
+      "title": "技术技能",
+      "categories": [
+        {
+          "name": "前端开发",
+          "items": [
+            "Vue.js / VuePress",
+            "React.js",
+            "JavaScript / TypeScript",
+            "HTML5 / CSS3 / Tailwind CSS"
+          ]
+        },
+        {
+          "name": "后端开发",
+          "items": [
+            "Node.js",
+            "Python",
+            "RESTful APIs",
+            "数据库设计"
+          ]
+        }
+      ]
+    },
+    "experience": {
+      "title": "工作经历",
+      "items": [
+        {
+          "title": "高级开发工程师",
+          "company": "公司名称",
+          "period": "2020 - 至今",
+          "achievements": [
+            "领导企业应用关键功能的开发",
+            "指导初级开发人员并进行代码审查",
+            "实施 CI/CD 流程并改进部署流程"
+          ]
+        }
+      ]
+    },
+    "education": {
+      "title": "教育背景",
+      "items": [
+        {
+          "degree": "计算机科学学士",
+          "school": "大学名称",
+          "period": "2016 - 2020"
+        }
+      ]
+    },
+    "projects": {
+      "title": "精选项目",
+      "items": [
+        {
+          "name": "个人博客",
+          "description": "使用 VuePress 构建的双语博客，支持中英文内容。",
+          "technologies": "VuePress, Vue.js, Tailwind CSS"
+        }
+      ]
+    }
+  }
+}

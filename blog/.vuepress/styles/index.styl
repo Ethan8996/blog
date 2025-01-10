@@ -1,3 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Override VuePress default max-width
+.theme-default-content:not(.custom)
+  max-width: none !important
+  width: 80%
+  margin: 0 auto
+  padding: 2rem 2.5rem
+
+.home
+  max-width: none !important
+  width: 80%
+  margin: 0 auto
+  padding: 2rem 2.5rem
+
+.page
+  padding-left: 0 !important
+
+@media (max-width: 719px)
+  .theme-default-content:not(.custom)
+    width: 100%
+    padding: 1.5rem
+  
+  .home
+    width: 100%
+    padding: 1.5rem
+
+// Make navbar consistent with content width
+.navbar
+  .links
+    width: 80%
+    margin: 0 auto
+    padding: 0 2.5rem
+    @media (max-width: 719px)
+      width: 100%
+      padding: 0 1.5rem
+
+// Keep content centered
+.theme-container
+  .page
+    padding-left: 0
+
 .align-center
-    display block
-    margin 0 auto
+  display: block
+  margin: 0 auto

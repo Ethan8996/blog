@@ -5,6 +5,9 @@ module.exports = (options, context, api) => {
     description: "Web development, Frontend, JavaScript",
     base: '/blog/',  // 替换为你的仓库名
     theme: "@vuepress/blog",
+    head: [
+      ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' }]
+    ],
     plugins: [
       [
         "@vuepress/google-analytics",
@@ -13,43 +16,47 @@ module.exports = (options, context, api) => {
         }
       ]
     ],
+    markdown: {
+      anchor: {
+        permalinkSymbol: '#',
+        permalink: true,
+        slugify: (s) => {
+          // Convert Chinese characters to pinyin or use a simple hash
+          return encodeURIComponent(s.toLowerCase().replace(/\s+/g, '-'));
+        }
+      },
+      toc: { includeLevel: [2, 3] }
+    },
     themeConfig: {
       directories: [
         {
           id: "zh",
           dirname: "_zh",
-          title: "貼文",
           path: "/zh/",
-          itemPermalink: "/zh/:year/:month/:day/:slug"
+          itemPermalink: "/zh/:year/:month/:day/:slug",
+          layout: 'Layout',
+          itemLayout: 'Post',
+          frontmatter: { title: '' },
+          pagination: {
+            lengthPerPage: 8,
+            prevText: '上一页',
+            nextText: '下一页'
+          }
         },
         {
           id: "en",
           dirname: "_en",
-          title: "Post",
           path: "/en/",
-          itemPermalink: "/en/:year/:month/:day/:slug"
+          itemPermalink: "/en/:year/:month/:day/:slug",
+          layout: 'Layout',
+          itemLayout: 'Post',
+          pagination: {
+            lengthPerPage: 8,
+            prevText: 'Previous',
+            nextText: 'Next'
+          }
         }
       ],
-      // sitemap: {
-      //   hostname: "https://billyyyyy3320.com/"
-      // },
-      // comment: {
-      //   service: "vssue",
-      //   autoCreateIssue: true,
-      //   prefix: "[Post]",
-      //   owner: "newsbielt703",
-      //   repo: "billy",
-      //   clientId: "4119e8c1b0093fc5d034",
-      //   clientSecret: "1ac1176791689b1ca31037c39489fc7b0667015d"
-      // },
-      // newsletter: {
-      //   endpoint:
-      //     "https://gmail.us5.list-manage.com/subscribe/post?u=942c0d587f8ea28269e80d6cd&amp;id=d77d789d53"
-      // },
-      // feed: {
-      //   canonical_base: "https://billyyyyy3320.com/",
-      //   posts_directories: ["/_en/"]
-      // },
       nav: [
         {
           text: "部落格",
@@ -60,32 +67,24 @@ module.exports = (options, context, api) => {
           link: "/en/"
         },
         {
+          text: "Resume",
+          link: "/resume/"
+        },
+        {
           text: "Github",
           link: "https://github.com/Ethan8996"
         }
       ],
-      // footer: {
-      //   contact: [
-      //     {
-      //       type: "github",
-      //       link: "https://github.com/billyyyyy3320"
-      //     },
-      //     {
-      //       type: "linkedin",
-      //       link: "https://linkedin.com/in/billy-chin"
-      //     },
-      //     {
-      //       type: "mail",
-      //       link: "mailto:newsbielt703@gmail.com"
-      //     }
-      //   ],
-      //   copyright: [
-      //     {
-      //       text: "© 2019 to present, Billy Chin",
-      //       link: ""
-      //     }
-      //   ]
-      // },
+      containerWidth: '80%',  
+      contentWidth: '100%',   
+      footer: {
+        contact: [
+          {
+            type: "github",
+            link: "https://github.com/Ethan8996"
+          }
+        ]
+      },
       smoothScroll: true
     },
     alias: {
