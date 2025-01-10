@@ -1,19 +1,35 @@
 <template>
   <div class="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
+      <!-- 语言切换 -->
+      <div class="absolute top-4 right-4">
+        <button 
+          @click="toggleLanguage" 
+          class="px-4 py-2 rounded-full bg-gradient-to-r from-primary to-primary-light
+                text-white font-medium transition duration-300 ease-in-out
+                transform hover:scale-105 hover:shadow-lg
+                focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50"
+        >
+          <div class="flex items-center space-x-2">
+            <span class="material-icons text-sm">language</span>
+            <span>{{ currentLang === 'en' ? '中文' : 'English' }}</span>
+          </div>
+        </button>
+      </div>
+
       <!-- Header Section -->
       <div class="bg-gradient-to-r from-primary to-green-600 text-white px-4 py-6">
         <div class="max-w-2xl mx-auto">
-          <h1 class="text-2xl font-bold">Ethan Xiong</h1>
-          <p class="text-base mt-1 opacity-90">Full Stack Developer</p>
+          <h1 class="text-2xl font-bold">{{ resume.basics.name }}</h1>
+          <p class="text-base mt-1 opacity-90">{{ resume.basics.title }}</p>
           <div class="mt-3 flex flex-wrap gap-3 text-sm">
-            <a href="mailto:why15874692787@163.com" class="flex items-center text-white hover:text-gray-200 transition">
+            <a :href="'mailto:' + resume.basics.email" class="flex items-center text-white hover:text-gray-200 transition">
               <i class="fas fa-envelope mr-1"></i>
-              <span>why15874692787@163.com</span>
+              <span>{{ resume.basics.email }}</span>
             </a>
-            <a href="https://github.com/Ethan8996" target="_blank" class="flex items-center text-white hover:text-gray-200 transition">
+            <a :href="resume.basics.github.url" target="_blank" class="flex items-center text-white hover:text-gray-200 transition">
               <i class="fab fa-github mr-1"></i>
-              <span>GitHub</span>
+              <span>{{ resume.basics.github.text }}</span>
             </a>
           </div>
         </div>
@@ -23,49 +39,44 @@
       <div class="px-6 py-6">
         <!-- About Section -->
         <section class="mb-6">
-          <h2 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">About Me</h2>
+          <h2 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">{{ resume.about.title }}</h2>
           <p class="text-gray-600 leading-relaxed text-sm">
-            A passionate full-stack developer with expertise in modern web technologies and a keen interest in building scalable applications. 
-            Experienced in both frontend and backend development, with a focus on creating efficient and user-friendly solutions.
+            {{ resume.about.content }}
           </p>
         </section>
 
         <!-- Skills Section -->
-        <section class="mb-6">
-          <h2 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">Technical Skills</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-gray-50 rounded-lg p-3 shadow-sm">
-              <h3 class="font-semibold text-primary mb-2 text-sm">Frontend Development</h3>
-              <ul class="space-y-1 text-gray-600 text-sm">
-                <li>• Vue.js / VuePress</li>
-                <li>• React.js</li>
-                <li>• JavaScript / TypeScript</li>
-                <li>• HTML5 / CSS3 / Tailwind CSS</li>
-              </ul>
-            </div>
-            <div class="bg-gray-50 rounded-lg p-3 shadow-sm">
-              <h3 class="font-semibold text-primary mb-2 text-sm">Backend Development</h3>
-              <ul class="space-y-1 text-gray-600 text-sm">
-                <li>• Node.js</li>
-                <li>• Python</li>
-                <li>• RESTful APIs</li>
-                <li>• Database Design</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+        <!-- Skills Section -->
+<section class="mb-6">
+  <h2 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">{{ resume.skills.title }}</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div v-for="(category, index) in resume.skills.categories" 
+         :key="index" 
+         class="bg-gray-50 rounded-lg p-4 shadow-sm">
+      <h3 class="font-semibold text-primary mb-3 text-sm">{{ category.name }}</h3>
+      <ul class="space-y-2">
+        <li v-for="(item, idx) in category.items" 
+            :key="idx"
+            class="flex items-center text-gray-600 text-sm">
+          <span class="w-2 h-2 rounded-full bg-primary/60 mr-2"></span>
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
         <!-- Experience Section -->
         <section class="mb-6">
-          <h2 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">Work Experience</h2>
+          <h2 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">{{ resume.experience.title }}</h2>
           <div class="space-y-4">
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800">Senior Developer</h3>
-              <p class="text-gray-600 italic text-sm">Company Name • 2020 - Present</p>
+            <div v-for="(exp, index) in resume.experience.items" :key="index">
+              <h3 class="text-lg font-semibold text-gray-800">{{ exp.title }}</h3>
+              <p class="text-gray-600 italic text-sm">{{ exp.company }} • {{ exp.period }}</p>
               <ul class="list-disc ml-5 mt-2 text-gray-600 space-y-1 text-sm">
-                <li>Led development of key features for enterprise applications</li>
-                <li>Mentored junior developers and conducted code reviews</li>
-                <li>Implemented CI/CD pipelines and improved deployment processes</li>
+                <li v-for="(achievement, idx) in exp.achievements" :key="idx">
+                  {{ achievement }}
+                </li>
               </ul>
             </div>
           </div>
@@ -73,21 +84,23 @@
 
         <!-- Education Section -->
         <section class="mb-6">
-          <h2 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">Education</h2>
-          <div>
-            <h3 class="text-lg font-semibold text-gray-800">Bachelor's in Computer Science</h3>
-            <p class="text-gray-600 italic text-sm">University Name • 2016 - 2020</p>
+          <h2 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">{{ resume.education.title }}</h2>
+          <div v-for="(edu, index) in resume.education.items" :key="index">
+            <h3 class="text-lg font-semibold text-gray-800">{{ edu.degree }}</h3>
+            <p class="text-gray-600 italic text-sm">{{ edu.school }} • {{ edu.period }}</p>
           </div>
         </section>
 
         <!-- Projects Section -->
         <section>
-          <h2 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">Featured Projects</h2>
+          <h2 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">{{ resume.projects.title }}</h2>
           <div class="space-y-4">
-            <div class="bg-gray-50 p-3 rounded-lg shadow-sm">
-              <h3 class="text-base font-semibold text-primary">Personal Blog</h3>
-              <p class="text-gray-600 mt-1 text-sm">A bilingual blog built with VuePress, featuring both Chinese and English content.</p>
-              <div class="mt-2 text-xs text-gray-500">Technologies: VuePress, Vue.js, Tailwind CSS</div>
+            <div v-for="(project, index) in resume.projects.items" 
+                 :key="index" 
+                 class="bg-gray-50 p-3 rounded-lg shadow-sm">
+              <h3 class="text-base font-semibold text-primary">{{ project.name }}</h3>
+              <p class="text-gray-600 mt-1 text-sm">{{ project.description }}</p>
+              <div class="mt-2 text-xs text-gray-500">{{ project.technologies }}</div>
             </div>
           </div>
         </section>
@@ -97,12 +110,36 @@
 </template>
 
 <script>
+import resumeData from '../data/resume.json'
+
 export default {
-  name: 'Resume'
+  name: 'Resume',
+  data() {
+    return {
+      currentLang: 'en',
+      resumeData
+    }
+  },
+  computed: {
+    resume() {
+      return this.resumeData[this.currentLang]
+    }
+  },
+  methods: {
+    toggleLanguage() {
+      this.currentLang = this.currentLang === 'en' ? 'zh' : 'en'
+    }
+  },
+  created() {
+    // 根据浏览器语言自动设置初始语言
+    const browserLang = navigator.language.toLowerCase()
+    this.currentLang = browserLang.includes('zh') ? 'zh' : 'en'
+  }
 }
 </script>
 
 <style>
+/* 保持原有样式不变 */
 .theme-container {
   max-width: 100%;
   margin: 0;
@@ -115,15 +152,21 @@ export default {
   padding: 0 !important;
 }
 
-/* Add width constraint to resume content */
 .max-w-4xl {
-  max-width: 48rem !important;  /* Approximately 768px */
+  max-width: 48rem !important;
 }
 
-/* Make resume content more compact */
 @media (min-width: 640px) {
   .max-w-4xl {
-    max-width: 40rem !important;  /* Even more compact for larger screens */
+    max-width: 40rem !important;
   }
+}
+
+/* 添加过渡动画 */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>
