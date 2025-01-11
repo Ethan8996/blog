@@ -130,10 +130,12 @@ export default {
       this.currentLang = this.currentLang === 'en' ? 'zh' : 'en'
     }
   },
-  created() {
-    // 根据浏览器语言自动设置初始语言
-    const browserLang = navigator.language.toLowerCase()
-    this.currentLang = browserLang.includes('zh') ? 'zh' : 'en'
+  mounted() {
+    // 在客户端环境下检查浏览器语言
+    if (typeof window !== 'undefined') {
+      const browserLang = navigator.language.toLowerCase()
+      this.currentLang = browserLang.includes('zh') ? 'zh' : 'en'
+    }
   }
 }
 </script>

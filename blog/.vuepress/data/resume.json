@@ -1,9 +1,15 @@
 {
   "en": {
     "basics": {
-      "name": "Ethan Xiong",
-      "title": "Full Stack Developer",
+      "name": "Yifan Xiong",
+      "title": "Java Backend Developer",
       "email": "why15874692787@163.com",
+      "phone": "18551001272",
+      "location": "Bao'an, Shenzhen",
+      "age": "26",
+      "hometown": "Yongzhou, Hunan",
+      "experience": "3 years",
+      "status": "Available immediately",
       "github": {
         "url": "https://github.com/Ethan8996",
         "text": "GitHub"
@@ -11,27 +17,30 @@
     },
     "about": {
       "title": "About Me",
-      "content": "A passionate full-stack developer with expertise in modern web technologies and a keen interest in building scalable applications. Experienced in both frontend and backend development, with a focus on creating efficient and user-friendly solutions."
+      "content": "Java backend developer with 3 years of experience in full-stack development, specializing in microservices architecture and cloud-native applications. Strong expertise in Spring Cloud Alibaba and DevOps practices."
     },
     "skills": {
       "title": "Technical Skills",
       "categories": [
         {
-          "name": "Frontend Development",
+          "name": "Backend Development",
           "items": [
-            "Vue.js / VuePress",
-            "React.js",
-            "JavaScript / TypeScript",
-            "HTML5 / CSS3 / Tailwind CSS"
+            "Java (Collections, Multithreading)",
+            "Spring Boot, Spring Cloud Alibaba",
+            "MySQL, PostgreSQL",
+            "Redis",
+            "RocketMQ",
+            "Docker, Docker Compose"
           ]
         },
         {
-          "name": "Backend Development",
+          "name": "Other Skills",
           "items": [
-            "Node.js",
-            "Python",
-            "RESTful APIs",
-            "Database Design"
+            "Linux, Bash Scripting",
+            "TCP/IP Network Protocols",
+            "GPT Code Generation & Refactoring",
+            "Vue.js Frontend Development",
+            "Python Scripting"
           ]
         }
       ]
@@ -40,13 +49,27 @@
       "title": "Work Experience",
       "items": [
         {
-          "title": "Senior Developer",
-          "company": "Company Name",
-          "period": "2020 - Present",
+          "title": "Backend Infrastructure Team Leader",
+          "company": "Shenzhen Saihande Technology Co., Ltd",
+          "period": "2023.06 - 2024.11",
           "achievements": [
-            "Led development of key features for enterprise applications",
-            "Mentored junior developers and conducted code reviews",
-            "Implemented CI/CD pipelines and improved deployment processes"
+            "Led the development of MES system's core modules",
+            "Managed infrastructure and architecture decisions",
+            "Implemented caching solutions using Redis",
+            "Upgraded services from JDK 8 to JDK 17",
+            "Coordinated team activities and resource allocation"
+          ]
+        },
+        {
+          "title": "Full Stack Developer",
+          "company": "Shenzhen Simaite Information Technology Co., Ltd",
+          "period": "2022.03 - 2023.05",
+          "achievements": [
+            "Developed and maintained LIMS system",
+            "Led client delivery projects",
+            "Full-stack development using Vue.js and Spring Cloud",
+            "System deployment and maintenance",
+            "Client training and support"
           ]
         }
       ]
@@ -55,9 +78,9 @@
       "title": "Education",
       "items": [
         {
-          "degree": "Bachelor's in Computer Science",
-          "school": "University Name",
-          "period": "2016 - 2020"
+          "degree": "Bachelor's Degree",
+          "school": "Zhengzhou University (211)",
+          "period": "2016.09 - 2020.09"
         }
       ]
     },
@@ -65,18 +88,29 @@
       "title": "Featured Projects",
       "items": [
         {
-          "name": "Personal Blog",
-          "description": "A bilingual blog built with VuePress, featuring both Chinese and English content.",
-          "technologies": "VuePress, Vue.js, Tailwind CSS"
+          "name": "Manufacturing Execution System (MES)",
+          "description": "A comprehensive manufacturing management system enabling production visualization and digitalization.",
+          "technologies": "SpringCloud Alibaba, RocketMQ, Redis, PostgreSQL, Minio, Nginx, Docker, Jenkins, XXL-Job"
+        },
+        {
+          "name": "Laboratory Information Management System (LIMS)",
+          "description": "A system for managing laboratory samples, test data, and workflows with electronic reporting capabilities.",
+          "technologies": "SpringCloud Alibaba, Redis, MySQL, Nginx, Vue.js, ElementUI, Minio, Docker"
         }
       ]
     }
   },
   "zh": {
     "basics": {
-      "name": "熊文浩",
-      "title": "全栈开发工程师",
+      "name": "熊一帆",
+      "title": "Java 后端开发",
       "email": "why15874692787@163.com",
+      "phone": "18551001272",
+      "location": "深圳宝安",
+      "age": "26",
+      "hometown": "湖南永州",
+      "experience": "3年",
+      "status": "离职 随时到岗",
       "github": {
         "url": "https://github.com/Ethan8996",
         "text": "GitHub"
@@ -84,27 +118,30 @@
     },
     "about": {
       "title": "关于我",
-      "content": "一位热衷于现代网络技术的全栈开发者，专注于构建可扩展的应用程序。在前端和后端开发方面都有丰富的经验，致力于创建高效且用户友好的解决方案。"
+      "content": "拥有3年全栈开发经验的Java后端开发工程师，专注于微服务架构和云原生应用开发。在Spring Cloud Alibaba和DevOps实践方面有深入的经验。"
     },
     "skills": {
       "title": "技术技能",
       "categories": [
         {
-          "name": "前端开发",
+          "name": "后端开发",
           "items": [
-            "Vue.js / VuePress",
-            "React.js",
-            "JavaScript / TypeScript",
-            "HTML5 / CSS3 / Tailwind CSS"
+            "Java（集合、多线程）",
+            "Spring Boot、Spring Cloud Alibaba",
+            "MySQL、PostgreSQL",
+            "Redis",
+            "RocketMQ",
+            "Docker、Docker Compose"
           ]
         },
         {
-          "name": "后端开发",
+          "name": "其他技能",
           "items": [
-            "Node.js",
-            "Python",
-            "RESTful APIs",
-            "数据库设计"
+            "Linux常用命令、Bash脚本",
+            "TCP/IP网络协议栈",
+            "GPT工具代码生成与重构",
+            "Vue.js前端开发",
+            "Python脚本开发"
           ]
         }
       ]
@@ -113,13 +150,27 @@
       "title": "工作经历",
       "items": [
         {
-          "title": "高级开发工程师",
-          "company": "公司名称",
-          "period": "2020 - 至今",
+          "title": "后端基础架构组组长",
+          "company": "深圳赛瀚德技术有限公司",
+          "period": "2023.06 - 2024.11",
           "achievements": [
-            "领导企业应用关键功能的开发",
-            "指导初级开发人员并进行代码审查",
-            "实施 CI/CD 流程并改进部署流程"
+            "负责MES系统核心模块开发",
+            "管理基础架构和架构决策",
+            "实现Redis缓存方案",
+            "完成从JDK8到JDK17的升级",
+            "协调团队活动和资源分配"
+          ]
+        },
+        {
+          "title": "全栈开发工程师",
+          "company": "深圳思码特信息技术有限公司",
+          "period": "2022.03 - 2023.05",
+          "achievements": [
+            "开发维护LIMS系统",
+            "负责客户交付项目",
+            "使用Vue.js和Spring Cloud进行全栈开发",
+            "系统部署和维护",
+            "客户培训和支持"
           ]
         }
       ]
@@ -128,19 +179,24 @@
       "title": "教育背景",
       "items": [
         {
-          "degree": "计算机科学学士",
-          "school": "大学名称",
-          "period": "2016 - 2020"
+          "degree": "本科",
+          "school": "郑州大学（211）",
+          "period": "2016.09 - 2020.09"
         }
       ]
     },
     "projects": {
-      "title": "精选项目",
+      "title": "项目经验",
       "items": [
         {
-          "name": "个人博客",
-          "description": "使用 VuePress 构建的双语博客，支持中英文内容。",
-          "technologies": "VuePress, Vue.js, Tailwind CSS"
+          "name": "生产制造执行系统（MES）",
+          "description": "为工厂客户开发的管理系统，实现生产过程的可视化、数字化，帮助客户进行产品的数据追溯。",
+          "technologies": "SpringCloud Alibaba、RocketMQ、Redis、PostgreSQL、Minio、Nginx、Docker、Jenkins、XXL-Job"
+        },
+        {
+          "name": "实验室管理系统（LIMS）",
+          "description": "为实验室客户开发的管理系统，实现管理科学样品、测试数据和流程，实现检验报告电子化。",
+          "technologies": "SpringCloud Alibaba、Redis、MySQL、Nginx、Vue.js、ElementUI、Minio、Docker"
         }
       ]
     }
