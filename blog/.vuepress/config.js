@@ -6,7 +6,8 @@ module.exports = (options, context, api) => {
     base: '/blog/',  // 替换为你的仓库名
     theme: "@vuepress/blog",
     head: [
-      ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' }]
+      ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' }],
+      ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }]
     ],
     plugins: [
       [
@@ -73,6 +74,10 @@ module.exports = (options, context, api) => {
         {
           text: "Github",
           link: "https://github.com/Ethan8996"
+        },
+        {
+          text: "Playground",
+          link: "/playground/"
         }
       ],
       containerWidth: '80%',  
