@@ -1,7 +1,10 @@
 ---
-title: SnowEffect
+title: AuroraEffect
 ---
 
-<ClientOnly>
+<!-- <ClientOnly>
   <SnowEffect/>
+</ClientOnly> -->
+<ClientOnly>
+  <AuroraEffect/>
 </ClientOnly>

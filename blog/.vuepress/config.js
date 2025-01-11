@@ -74,10 +74,6 @@ module.exports = (options, context, api) => {
         {
           text: "Github",
           link: "https://github.com/Ethan8996"
-        },
-        {
-          text: "Playground",
-          link: "/playground/"
         }
       ],
       containerWidth: '80%',  

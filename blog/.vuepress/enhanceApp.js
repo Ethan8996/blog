@@ -16,5 +16,8 @@ export default ({
     import('./components/SnowEffect.vue').then(module => {
       Vue.component('SnowEffect', module.default)
     })
+    import('./components/AuroraEffect.vue').then(module => {
+      Vue.component('AuroraEffect', module.default)
+    })
   }
 }
