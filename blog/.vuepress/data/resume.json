@@ -17,7 +17,7 @@
     },
     "about": {
       "title": "About Me",
-      "content": "Java backend developer with 3 years of experience in full-stack development, specializing in microservices architecture and cloud-native applications. Strong expertise in Spring Cloud Alibaba and DevOps practices."
+      "content": "Java backend developer with 3 years of development experience, specializing in microservices architecture. Strong expertise in Spring Cloud Alibaba and DevOps practices."
     },
     "skills": {
       "title": "Technical Skills",
@@ -118,7 +118,7 @@
     },
     "about": {
       "title": "关于我",
-      "content": "拥有3年全栈开发经验的Java后端开发工程师，专注于微服务架构和云原生应用开发。在Spring Cloud Alibaba和DevOps实践方面有深入的经验。"
+      "content": "拥有3年开发经验的Java后端开发工程师，专注于微服务架构应用开发。在Spring Cloud Alibaba和DevOps实践方面有深入的经验。"
     },
     "skills": {
       "title": "技术技能",
