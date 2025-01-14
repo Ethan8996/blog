@@ -13,9 +13,6 @@ export default ({
   // ...apply enhancements to the app
   // 确保在客户端运行
   if (typeof window !== 'undefined') {
-    import('./components/SnowEffect.vue').then(module => {
-      Vue.component('SnowEffect', module.default)
-    })
     import('./components/AuroraEffect.vue').then(module => {
       Vue.component('AuroraEffect', module.default)
     })
