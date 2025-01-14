@@ -15,6 +15,12 @@ module.exports = (options, context, api) => {
         {
           ga: process.env.GA
         }
+      ],
+      [
+        '@vuepress/plugin-register-components',
+        {
+          componentsDir: path.resolve(__dirname, './components')
+        }
       ]
     ],
     markdown: {
